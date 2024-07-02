@@ -1,0 +1,46 @@
+---
+import ArticleService from "./ArticleService.astro";
+
+const Services = [
+  {
+    src: "#",
+    title: "Administración de Servidores",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor perferendis earum quod dicta incidunt ut, delectus voluptatibus iste atque amet hic mollitia ducimus sapiente cum. Ex dolores architecto provident sit.",
+  },
+  {
+    src: "#",
+    title: "Páginas Web",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor perferendis earum quod dicta incidunt ut, delectus voluptatibus iste atque amet hic mollitia ducimus sapiente cum. Ex dolores architecto provident sit.",
+  },
+  {
+    src: "#",
+    title: "Aplicaciones Móviles",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor perferendis earum quod dicta incidunt ut, delectus voluptatibus iste atque amet hic mollitia ducimus sapiente cum. Ex dolores architecto provident sit.",
+  },
+];
+---
+
+<section>
+  <h2 class="">Los diferentes tipos de servicios</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias corporis
+    adipisci ratione rem ipsa blanditiis et molestiae excepturi reiciendis!
+    Earum debitis aliquam optio ex, corrupti nihil harum ad praesentium
+    inventore?
+  </p>
+
+  <div>
+    {
+      Services.map((service) => (
+        <ArticleService
+          src={service.src}
+          title={service.title}
+          content={service.content}
+        />
+      ))
+    }
+  </div>
+</section>

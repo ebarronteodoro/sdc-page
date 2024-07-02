@@ -1,0 +1,51 @@
+---
+import NavComponent from "./NavComponent.astro";
+const NavContent = [
+  {
+    title: "Inicio",
+    href: "#",
+  },
+  {
+    title: "Conócenos",
+    href: "#",
+  },
+  {
+    title: "Servicios",
+    href: "#",
+  },
+  {
+    title: "Contáctanos",
+    href: "#",
+  },
+];
+---
+
+<header
+  class="flex justify-between items-center px-6 fixed top-0 left-0 right-0 bg-transparent backdrop-blur-sm"
+>
+  <a>
+    <img
+      aria-hidden="true"
+      class="size-28"
+      title="System Digital Creations"
+      src="/assets/Logo.webp"
+      alt="SDC Logo"
+    />
+  </a>
+  <nav>
+    <ul class="flex gap-5 flex-wrap">
+      {
+        NavContent.map((nav) => (
+          <li>
+            <NavComponent
+              href={nav.href}
+              className="font-semibold py-1 px-4 rounded-2xl text-[18px] transition hover:text-[#2b1055] hover:bg-white"
+            >
+              {nav.title}
+            </NavComponent>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
